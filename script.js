@@ -1,7 +1,7 @@
 // Disable right-click context menu
 document.addEventListener('contextmenu', function(event) {
     event.preventDefault();
-    alert("Right-click is disabled on this page.");
+    
 });
 
 // Disable F12 (Developer Tools) and Ctrl+Shift+I (Inspect Element)
