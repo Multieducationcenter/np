@@ -1,8 +1,13 @@
-// Get the elements
-const hamburgerMenu = document.getElementById('hamburgerMenu');
-const navbar = document.getElementById('navbar');
+// Disable right-click context menu
+document.addEventListener('contextmenu', function(event) {
+    event.preventDefault();
+    alert("Right-click is disabled on this page.");
+});
 
-// Toggle the navbar when hamburger menu is clicked
-hamburgerMenu.addEventListener('click', () => {
-    navbar.classList.toggle('active');
+// Disable F12 (Developer Tools) and Ctrl+Shift+I (Inspect Element)
+document.addEventListener('keydown', function(event) {
+    if (event.key === 'F12' || (event.ctrlKey && event.shiftKey && event.key === 'I')) {
+        event.preventDefault();
+        alert("Developer tools are disabled on this page.");
+    }
 });
