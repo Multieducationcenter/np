@@ -1,48 +1,58 @@
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-html {
-    scroll-behavior: smooth;
-  }
 
 body {
-    background-color: rgb(226, 248, 248);
-    background-image: url('bg.png.jpg');
+    font-family: 'Roboto', sans-serif;
+    background-color: #e2f8f8; /* Background color */
+    color: #333;
+    line-height: 1.6;
+}
+html {
+    scroll-behavior: smooth;
+}
+/* Header */
+header {
+    background-image: url('bg.png.jpg'); /* Replace with the actual path to your image */
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;
-    height: 94.4vh;
+    min-height: 100vh; /* Make header full viewport height */
+    color: white;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     position: relative;
-    font-family: 'Bitter', serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Horizontally center content */
+    padding: 2rem;
+    text-align: center;
 }
 
-.overlay {
+header::before {
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 53.7rem;
-    background: rgba(0, 0, 0, 0.4);
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4); /* Lighter overlay - alpha value changed to 0.4 */
+    z-index: 1;
 }
 
-header {
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    text-align: center;
+.container {
+    position: relative;
     z-index: 2;
-    width: 100%;
+    width: 90%; /* Adjust width as needed */
+    max-width: 1200px; /* Optional: Maximum width for the container */
 }
 
 .title {
-    font-size: 55px;
-    font-weight: 700;
-    color: white;
-    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.7);
-    margin-bottom: 20px;
+    font-size: 4rem;
+    font-family: 'Bitter', serif;
+    margin-bottom: 2rem; /* Increased margin to separate title and nav */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .highlight {
@@ -52,41 +62,133 @@ header {
 .navbar {
     display: flex;
     justify-content: center;
-    gap: 50px; 
     flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: auto; /* Push navbar to the bottom */
+    margin-bottom: 3rem; /* Add some bottom margin */
 }
 
 .navbar a {
     color: white;
     text-decoration: none;
-    font-size: 20px; 
     font-weight: 600;
-    padding: 10px 20px; 
-    transition: color 0.3s, transform 0.2s;
+    font-size: 1.2rem;
+    transition: color 0.3s ease; /* Only transition the color */
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+    /* Removed background-color from anchor tags */
 }
 
 .navbar a:hover {
     color: crimson;
-    transform: scale(1.1); 
+    /* Removed background-color on hover */
 }
 
-.aboutus{
-    color: blanchedalmond;
-}
-.headd{
-    font-size: 40px;
-}
-.ab {
-    font-size: 19px;
-    word-spacing: 7px;
-    line-height: 29px;
-    letter-spacing: 0.7px;
-    text-align: center;
-    display: block;
+/* Sections */
+main {
+    padding-top: 10vh; /* Push main content below the header */
+    padding-left: 1rem;
+    padding-right: 1rem;
+    max-width: 1100px;
     margin: 0 auto;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-family: 'Bitter', serif;
+}
+
+.text-box {
+    background-color: #fff;
+    border-left: 5px solid crimson;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     max-width: 900px;
- }
- .about{
-    padding-top: 55rem;
- }
- 
+    margin: 1.5rem auto;
+    font-size: 1.05rem;
+}
+
+.main-img {
+    max-width: 700px;
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 2rem auto;
+}
+
+/* Footer */
+footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    margin-top: 3rem;
+}
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.contact-item {
+    text-align: center;
+}
+
+.contact-icon {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 1rem;
+}
+
+.contact-item p {
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.contact-item a {
+    color: crimson;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.contact-item a:hover {
+    color: #333;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .title {
+        font-size: 3rem;
+    }
+
+    .navbar {
+        gap: 1rem;
+    }
+
+    .navbar a {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .title {
+        font-size: 2.5rem;
+    }
+
+    .navbar {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.8rem;
+    }
+
+    .navbar a {
+        font-size: 0.9rem;
+        padding: 0.6rem 1.2rem;
+    }
+}
